@@ -37,7 +37,7 @@ export class AddBookComponent implements OnInit {
   saveBook() {
     this.bookService.addBook(this.book).subscribe(data => {
       swal('Succes!', 'The book was added successfully', 'success').then(res=>{
-        this.router.navigateByUrl('/books');g
+        this.router.navigateByUrl('/books');
       });
     });
   }
