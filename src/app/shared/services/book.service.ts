@@ -37,4 +37,8 @@ export class BookService extends GenericService {
   addGenre(genre: Genre): Observable<Genre[]> {
     return <Observable<Genre[]>> this.http.post(this.url + 'genre/', genre);
   }
+
+  addBook(book: Book): Observable<Book> {
+    return <Observable<Book>> this.http.post(this.url, book);
+  }
 }

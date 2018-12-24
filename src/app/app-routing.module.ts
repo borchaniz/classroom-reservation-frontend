@@ -3,6 +3,8 @@ import {RouterModule, Routes} from '@angular/router';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {AuthorsComponent} from './authors/authors.component';
 import {GenresComponent} from './genres/genres.component';
+import {BooksComponent} from './books/books.component';
+import {AddBookComponent} from './add-book/add-book.component';
 
 
 export const AppRoutes: Routes = [
@@ -22,6 +24,14 @@ export const AppRoutes: Routes = [
   {
     path: 'genres',
     component: GenresComponent
+  },
+  {
+    path: 'books',
+    component: BooksComponent
+  },
+  {
+    path: 'add-book',
+    component: AddBookComponent
   }
 
 ];

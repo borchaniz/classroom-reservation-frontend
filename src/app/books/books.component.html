@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="card" style="min-height: 120px">
+    <div class="header">
+      <h4 class="title col-sm-8">All Books</h4>
+      <div class="col-sm-4" style="text-align: right">
+        <button class="btn btn-success" routerLink="/add-book">Add a Book</button>
+      </div>
+    </div>
+    <div class="content" style="margin-top: 50px">
+      <table id="example" class="display table table-striped" style="width:100%">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Discount</th>
+          <th>Genre</th>
+          <th>Author</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let book of books">
+          <td>{{book.id}}</td>
+          <td>{{book.title}}</td>
+          <td>{{book.price}}DT</td>
+          <td>{{book.activeDiscount?'-'+book.activeDiscount.percentage+'%':'None'}}</td>
+          <td>{{book.genre.label}}</td>
+          <td>{{book.author?book.author.name:''}}</td>
+        </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>

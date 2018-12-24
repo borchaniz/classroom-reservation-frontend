@@ -13,6 +13,8 @@ import {AuthorService} from './shared/services/author.service';
 import {BookService} from './shared/services/book.service';
 import {FormsModule} from '@angular/forms';
 import { GenresComponent } from './genres/genres.component';
+import { BooksComponent } from './books/books.component';
+import { AddBookComponent } from './add-book/add-book.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { GenresComponent } from './genres/genres.component';
     DashboardComponent,
     AuthorsComponent,
     GenresComponent,
+    BooksComponent,
+    AddBookComponent,
   ],
   imports: [
     BrowserModule,
