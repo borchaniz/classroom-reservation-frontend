@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {GenericService} from './generic.service';
 import {Genre} from '../models/genre';
 import {Book} from '../models/book';
+import {Discount} from '../models/discount';
 
 
 @Injectable({
@@ -40,5 +41,9 @@ export class BookService extends GenericService {
 
   addBook(book: Book): Observable<Book> {
     return <Observable<Book>> this.http.post(this.url, book);
+  }
+
+  saveDiscount(discount: Discount, bookId: number): Observable<Book> {
+    return <Observable<Book>> this.http.post(this.url + 'discount/' + bookId, discount);
   }
 }
