@@ -11,6 +11,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {UserService} from './shared/services/user.service';
 import {AuthorService} from './shared/services/author.service';
 import {BookService} from './shared/services/book.service';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {BookService} from './shared/services/book.service';
     RouterModule.forRoot(AppRoutes),
     HttpClientModule,
     SidebarModule,
+    FormsModule
   ],
   providers: [UserService, AuthorService, BookService],
   bootstrap: [AppComponent]

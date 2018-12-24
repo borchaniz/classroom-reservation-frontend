@@ -23,11 +23,18 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/sweetalert2/dist/sweetalert2.css"
+
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
-              "node_modules/bootstrap/dist/js/bootstrap.js"
+              "node_modules/bootstrap/dist/js/bootstrap.js",
+              "src/assets/js/datatables.min.js",
+              "src/assets/js/dataTables.bootstrap4.min.js",
+              "node_modules/sweetalert2/dist/sweetalert2.js"
+
+
             ]
           },
           "configurations": {
