@@ -1,31 +1,30 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {RouterModule} from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-import {AppComponent} from './app.component';
-import {AppRoutes} from './app.routing';
-import {SidebarModule} from './sidebar/sidebar.module';
-import {NguiMapModule} from '@ngui/map';
-
+import {AppRoutes, AppRoutingModule} from './app-routing.module';
+import { AppComponent } from './app.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
-import { AuthorsComponent } from './authors/authors.component';
-
+import {AuthorsComponent} from './authors/authors.component';
+import {SidebarModule} from './sidebar/sidebar.module';
+import {RouterModule} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
+import {UserService} from './shared/services/user.service';
+import {AuthorService} from './shared/services/author.service';
+import {BookService} from './shared/services/book.service';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        DashboardComponent,
-        AuthorsComponent,
-    ],
-    imports: [
-        BrowserModule,
-        RouterModule.forRoot(AppRoutes),
-        SidebarModule,
-        NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=YOUR_KEY_HERE'})
-
-    ],
-    providers: [],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    DashboardComponent,
+    AuthorsComponent,
+  ],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(AppRoutes),
+    HttpClientModule,
+    SidebarModule,
+  ],
+  providers: [UserService, AuthorService, BookService],
+  bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }
