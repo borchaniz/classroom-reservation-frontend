@@ -11,6 +11,7 @@ export interface RouteInfo {
 
 export const ROUTES: RouteInfo[] = [
   {path: 'authors', title: 'Authors', icon: 'ti-user', class: ''},
+  {path: 'genres', title: 'Genres', icon: 'ti-layout-grid2-alt', class: ''},
 
 ];
 

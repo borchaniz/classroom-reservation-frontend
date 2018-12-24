@@ -12,12 +12,14 @@ import {UserService} from './shared/services/user.service';
 import {AuthorService} from './shared/services/author.service';
 import {BookService} from './shared/services/book.service';
 import {FormsModule} from '@angular/forms';
+import { GenresComponent } from './genres/genres.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     AuthorsComponent,
+    GenresComponent,
   ],
   imports: [
     BrowserModule,

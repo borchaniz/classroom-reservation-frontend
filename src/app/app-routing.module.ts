@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {AuthorsComponent} from './authors/authors.component';
+import {GenresComponent} from './genres/genres.component';
 
 
 export const AppRoutes: Routes = [
@@ -17,11 +18,17 @@ export const AppRoutes: Routes = [
   {
     path: 'authors',
     component: AuthorsComponent
+  },
+  {
+    path: 'genres',
+    component: GenresComponent
   }
 
 ];
+
 @NgModule({
   imports: [RouterModule.forRoot(AppRoutes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

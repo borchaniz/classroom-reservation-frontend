@@ -32,8 +32,9 @@ export class AuthorsComponent implements OnInit {
       this.authors = data;
       jQuery('#example').DataTable().destroy();
       jQuery('#example').DataTable();
-      swal("Success!", 'The new author has been saved!','success');
-
+      swal('Success!', 'The new author has been saved!', 'success');
+    }, error1 => {
+      swal('Error!', 'An Error has occured please try again!', 'success');
     });
   }
 
