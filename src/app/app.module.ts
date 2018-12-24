@@ -15,6 +15,7 @@ import {FormsModule} from '@angular/forms';
 import { GenresComponent } from './genres/genres.component';
 import { BooksComponent } from './books/books.component';
 import { AddBookComponent } from './add-book/add-book.component';
+import {FileService} from './shared/services/file.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { AddBookComponent } from './add-book/add-book.component';
     SidebarModule,
     FormsModule
   ],
-  providers: [UserService, AuthorService, BookService],
+  providers: [UserService, AuthorService, BookService,FileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
