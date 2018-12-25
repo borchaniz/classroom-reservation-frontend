@@ -20,21 +20,21 @@ export class UserService extends GenericService {
   }
 
   public login(user: User): Observable<HttpResponse<Object>> {
-    return <Observable<HttpResponse<Object>>> this.http.post(this.url + 'login', user,{observe: "response"});
+    return <Observable<HttpResponse<Object>>> this.http.post(this.url + 'login', user, {observe: 'response'});
   }
 
-  getAuthUser() :Observable<User>{
-    const headers = this.headers.set("Authorization", localStorage.getItem(Consts.TOKEN_STORAGE));
-    return <Observable<User>> this.http.get(this.url+"user/authenticated",{headers:headers});
+  getAuthUser(): Observable<User> {
+    const headers = this.headers.set('Authorization', localStorage.getItem(Consts.TOKEN_STORAGE));
+    return <Observable<User>> this.http.get(this.url + 'user/authenticatedAdmin', {headers: headers});
   }
 
-  addToCart(bookId:number, quantity:number) : Observable<any>{
-    const headers = this.headers.set("Authorization", localStorage.getItem(Consts.TOKEN_STORAGE));
-    return <Observable<any>> this.http.post(this.url+"user/addToCart",{bookId:bookId, quantity:quantity},{headers:headers});
+  addToCart(bookId: number, quantity: number): Observable<any> {
+    const headers = this.headers.set('Authorization', localStorage.getItem(Consts.TOKEN_STORAGE));
+    return <Observable<any>> this.http.post(this.url + 'user/addToCart', {bookId: bookId, quantity: quantity}, {headers: headers});
   }
 
-  clearCart():Observable<User> {
-    const headers = this.headers.set("Authorization", localStorage.getItem(Consts.TOKEN_STORAGE));
-    return <Observable<User>> this.http.delete(this.url+'user/clearCart',{headers:headers});
+  clearCart(): Observable<User> {
+    const headers = this.headers.set('Authorization', localStorage.getItem(Consts.TOKEN_STORAGE));
+    return <Observable<User>> this.http.delete(this.url + 'user/clearCart', {headers: headers});
   }
 }

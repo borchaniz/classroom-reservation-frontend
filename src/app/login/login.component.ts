@@ -1,5 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from '../shared/models/user';
+import {UserService} from '../shared/services/user.service';
+import {Consts} from '../shared/Consts';
+import {Router} from '@angular/router';
+
+declare var swal: any;
 
 @Component({
   selector: 'app-login',
@@ -10,10 +15,27 @@ export class LoginComponent implements OnInit {
 
   user: User = new User();
 
-  constructor() {
+  constructor(private userService: UserService, private router: Router) {
   }
 
   ngOnInit() {
+  }
+
+  login() {
+    this.userService.login(this.user).subscribe(resp => {
+      // display its headers
+      localStorage.setItem(Consts.TOKEN_STORAGE, resp.headers.get('Authorization'));
+      this.userService.getAuthUser().subscribe(data => {
+        localStorage.setItem(Consts.USER_STORAGE, JSON.stringify(data));
+        this.router.navigateByUrl('/');
+      },error => {
+        swal('Error', 'Please make sure you have entered the right credentials!', 'error');
+        localStorage.clear();
+      });
+    }, error => {
+      swal('Error', 'Please make sure you have entered the right credentials!', 'error');
+      localStorage.clear();
+    });
   }
 
 }

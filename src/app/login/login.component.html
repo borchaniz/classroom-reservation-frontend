@@ -12,9 +12,9 @@
     <form style="margin:0% 10%">
       <div class="form-group">
         <input type="password" class="form-control border-input" placeholder="Password" [(ngModel)]="user.password"
-               name="password">
+               name="password" autocomplete="false">
       </div>
-      <button class="btn btn-success" style="margin-bottom: 30px" [disabled]="!user.email||!user.password||user.password.length<6">Login</button>
+      <button class="btn btn-success" style="margin-bottom: 30px" [disabled]="!user.email||!user.password||user.password.length<6" (click)="login()">Login</button>
     </form>
   </div>
 </div>
