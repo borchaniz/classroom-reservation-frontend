@@ -5,35 +5,40 @@ import {AuthorsComponent} from './authors/authors.component';
 import {GenresComponent} from './genres/genres.component';
 import {BooksComponent} from './books/books.component';
 import {AddBookComponent} from './add-book/add-book.component';
+import {LoginComponent} from './login/login.component';
+import {LayoutComponent} from './layout/layout.component';
 
 
 export const AppRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full',
-  },
-  {
-    path: 'dashboard',
-    component: DashboardComponent
-  },
-  {
-    path: 'authors',
-    component: AuthorsComponent
-  },
-  {
-    path: 'genres',
-    component: GenresComponent
-  },
-  {
-    path: 'books',
-    component: BooksComponent
-  },
-  {
-    path: 'add-book',
-    component: AddBookComponent
+    component: LayoutComponent,
+    children: [
+      {
+        path: 'dashboard',
+        component: DashboardComponent
+      },
+      {
+        path: 'authors',
+        component: AuthorsComponent
+      },
+      {
+        path: 'genres',
+        component: GenresComponent
+      },
+      {
+        path: 'books',
+        component: BooksComponent
+      },
+      {
+        path: 'add-book',
+        component: AddBookComponent
+      }
+    ]
+  }, {
+    path: 'login',
+    component: LoginComponent
   }
-
 ];
 
 @NgModule({

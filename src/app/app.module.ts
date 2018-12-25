@@ -16,6 +16,8 @@ import { GenresComponent } from './genres/genres.component';
 import { BooksComponent } from './books/books.component';
 import { AddBookComponent } from './add-book/add-book.component';
 import {FileService} from './shared/services/file.service';
+import { LoginComponent } from './login/login.component';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import {FileService} from './shared/services/file.service';
     GenresComponent,
     BooksComponent,
     AddBookComponent,
+    LoginComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,

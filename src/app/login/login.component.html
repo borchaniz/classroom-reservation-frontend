@@ -1,0 +1,20 @@
+<div style="width: 100vw; height:100vh;background: url(assets/img/login.jpg); display: table-cell; vertical-align: middle">
+  <div class="col-md-4"></div>
+  <div style="background: white; border-radius: 6px; text-align: center" class="col-md-4">
+    <h2><b>Login</b></h2>
+    <form style="margin:0% 10%">
+      <div class="form-group">
+        <input type="email" class="form-control border-input" placeholder="Email" [(ngModel)]="user.email"
+               name="email">
+      </div>
+    </form>
+
+    <form style="margin:0% 10%">
+      <div class="form-group">
+        <input type="password" class="form-control border-input" placeholder="Password" [(ngModel)]="user.password"
+               name="password">
+      </div>
+      <button class="btn btn-success" style="margin-bottom: 30px" [disabled]="!user.email||!user.password||user.password.length<6">Login</button>
+    </form>
+  </div>
+</div>
