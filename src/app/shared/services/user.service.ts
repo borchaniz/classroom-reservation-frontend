@@ -20,7 +20,7 @@ export class UserService extends GenericService {
   }
 
   public login(user: User): Observable<HttpResponse<Object>> {
-    return <Observable<HttpResponse<Object>>> this.http.post(this.url + 'login', user, {observe: 'response'});
+    return <Observable<HttpResponse<Object>>> this.http.post(this.url + 'user/signin', user, {observe: 'response'});
   }
 
   getAuthUser(): Observable<User> {
