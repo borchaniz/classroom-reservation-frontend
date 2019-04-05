@@ -10,9 +10,7 @@ export interface RouteInfo {
 }
 
 export const ROUTES: RouteInfo[] = [
-  {path: '/authors', title: 'Authors', icon: 'ti-user', class: ''},
-  {path: '/genres', title: 'Genres', icon: 'ti-layout-grid2-alt', class: ''},
-  {path: '/books', title: 'Books', icon: 'ti-bookmark-alt', class: ''},
+  {path: '/list-rooms', title: 'Classrooms', icon: 'ti-bookmark-alt', class: ''},
 
 ];
 
