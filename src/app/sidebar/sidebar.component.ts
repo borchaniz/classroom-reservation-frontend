@@ -10,6 +10,7 @@ export interface RouteInfo {
 }
 
 export const ROUTES: RouteInfo[] = [
+  {path: '/salle', title: 'Liste des Salles', icon: 'ti-bookmark-alt', class: ''},
   {path: '/reservation/list', title: 'Mes Réservations', icon: 'ti-align-left', class: ''},
   {path: '/reservation/add', title: 'Réserver une salle', icon: 'ti-plus', class: ''}
 

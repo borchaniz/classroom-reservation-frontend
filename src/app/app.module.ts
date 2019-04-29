@@ -13,6 +13,8 @@ import {FileService} from './shared/services/file.service';
 import {LoginComponent} from './login/login.component';
 import {LayoutComponent} from './layout/layout.component';
 import {SignupComponent} from './signup/signup.component';
+import { ListSalleComponent } from './list-salle/list-salle.component';
+import {NgSelectModule} from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import {SignupComponent} from './signup/signup.component';
     DashboardComponent,
     LoginComponent,
     LayoutComponent,
-    SignupComponent
+    SignupComponent,
+    ListSalleComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +31,8 @@ import {SignupComponent} from './signup/signup.component';
     HttpClientModule,
     SidebarModule,
     FormsModule,
+    NgSelectModule
+
   ],
   providers: [UserService, FileService],
   bootstrap: [AppComponent]

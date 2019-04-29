@@ -15,4 +15,13 @@ export class Reservation {
   user_id: number;
   salle_id: number;
   organisme_id: number;
+
+  isValid() {
+    return this.start_date
+      && this.end_date
+      && this.description
+      && this.salle_id
+      && this.organisme_id
+      && this.start_date<this.end_date;
+  }
 }

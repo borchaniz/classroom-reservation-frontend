@@ -1,3 +1,58 @@
-<p>
-  add-reservation works!
-</p>
+<div class="col-md-1"></div>
+<div class="col-md-10">
+  <div class="card">
+    <div class="header">
+      <h4 class="title">Réserver une Salle</h4>
+    </div>
+    <div class="content">
+      <form>
+        <div class="form-group col-sm-6">
+          <label>De</label>
+          <input class="form-control" type="datetime-local" placeholder="Date & Heure de Début"
+                 [(ngModel)]="reservation.start_date" name="start">
+        </div>
+
+        <div class="form-group col-sm-6">
+          <label>À</label>
+          <input class="form-control" type="datetime-local" placeholder="Date & Heure de Fin"
+                 [(ngModel)]="reservation.end_date" name="end">
+        </div>
+
+        <div class="form-group">
+          <label>Organisme</label>
+          <ng-select [items]="organisms"
+                     bindLabel="label"
+                     bindValue="id"
+                     [(ngModel)]="reservation.organisme_id"
+                     name="organisme">
+          </ng-select>
+        </div>
+        <div class="form-group">
+          <label>Salle</label>
+          <ng-select [items]="salles"
+                     bindLabel="number"
+                     bindValue="id"
+                     [(ngModel)]="reservation.salle_id"
+                     name="salle">
+          </ng-select>
+        </div>
+
+        <div class="form-group">
+          <label>Description</label>
+          <input class="form-control" type="text" placeholder="Description"
+                 [(ngModel)]="reservation.description" name="desc">
+        </div>
+
+        <div class="form-group">
+          <label>Besoins Particuliers</label>
+          <input class="form-control" type="text" placeholder="Besoins Particuliers"
+                 [(ngModel)]="reservation.other_needs" name="needs">
+        </div>
+
+        <div style="text-align: center" class="form-group">
+          <button class="btn btn-success" [disabled] = "invalidForm()" (click)="saveReservation()">Enregistrer</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

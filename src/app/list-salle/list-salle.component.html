@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <h2>Salles</h2>
+  <div class="card" style="min-height: 120px">
+    <div class="header">
+      <h4>Toutes les Salles</h4>
+    </div>
+    <div class="content" style="margin-top: 50px">
+      <table id="rooms-table" class="display table table-striped rooms-table" style="width:100%; text-align: left ">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Salle N°</th>
+          <th>Capacité</th>
+          <th>Projecteur</th>
+          <th>Type</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let salle of salles; let i=index">
+          <td>{{salle.id}}</td>
+          <td >{{salle.number}}</td>
+          <td >{{salle.capacity}}</td>
+          <td >
+            <div class="label"
+                 [ngClass]="{'label-success':salle.has_projector, 'label-danger':!salle.has_projector}">
+              {{salle.has_projector ? 'Disponible' : 'Non Disponible'}}
+            </div>
+          </td>
+          <td >{{salle.type.label}}</td>
+          
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

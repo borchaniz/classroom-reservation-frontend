@@ -4,6 +4,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {LoginComponent} from './login/login.component';
 import {LayoutComponent} from './layout/layout.component';
 import {SignupComponent} from './signup/signup.component';
+import {ListSalleComponent} from './list-salle/list-salle.component';
 
 
 export const AppRoutes: Routes = [
@@ -17,6 +18,9 @@ export const AppRoutes: Routes = [
       }, {
         path: 'reservation',
         loadChildren:'./reservation/reservation.module#ReservationModule'
+      }, {
+        path: 'salle',
+        component:ListSalleComponent
       }
     ]
   }, {

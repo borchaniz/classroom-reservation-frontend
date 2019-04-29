@@ -5,7 +5,6 @@ export class Organisme {
   label: string;
   type: TypeOrganisme = new TypeOrganisme();
   type_organisme_id: number;
-  backup: Organisme;
 
   static clone(toClone: Organisme) :Organisme {
     let organism = new Organisme();
