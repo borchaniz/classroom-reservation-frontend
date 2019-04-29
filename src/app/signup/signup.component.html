@@ -1,0 +1,53 @@
+<div
+  style="width: 100vw; height:100vh;background: url(assets/img/login.jpg); display: table-cell; vertical-align: middle">
+  <div class="col-md-4"></div>
+  <div style="background: white; border-radius: 6px; text-align: center" class="col-md-4">
+    <h2><b>Login</b></h2>
+    <form style="margin:0% 10%">
+      <div class="form-group">
+        <input type="text" class="form-control border-input" placeholder="Nom" [(ngModel)]="user.first_name"
+               name="name">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control border-input" placeholder="Prénom" [(ngModel)]="user.last_name"
+               name="lname">
+      </div>
+
+      <div class="form-group">
+        <input type="text" class="form-control border-input" placeholder="CIN" [(ngModel)]="user.cin"
+               name="lname">
+      </div>
+
+      <div class="form-group">
+        <input type="text" class="form-control border-input" placeholder="Numéro d'inscription"
+               [(ngModel)]="user.num_ins"
+               name="lname">
+      </div>
+
+      <div class="form-group">
+        <input type="text" class="form-control border-input" placeholder="Numéro de téléphone"
+               [(ngModel)]="user.phone"
+               name="lname">
+      </div>
+
+      <div class="form-group">
+        <input type="email" class="form-control border-input" placeholder="Email" [(ngModel)]="user.email"
+               name="email">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control border-input" placeholder="Mot de Passe" [(ngModel)]="user.password"
+               name="password" autocomplete="false">
+      </div>
+
+      <div class="form-group">
+        <input type="password" class="form-control border-input" placeholder="Confirmer votre mot de passe"
+               [(ngModel)]="user.cPassword"
+               name="password" autocomplete="false">
+      </div>
+      <button class="btn btn-success" style="margin-bottom: 30px"
+              [disabled]="!user.first_name||!user.last_name||!user.phone||!user.cin||!user.num_ins||!user.email||!user.password||user.password.length<6||!user.cPassword||user.cPassword.length<6"
+              (click)="signup()">Créer un compte
+      </button>
+    </form>
+  </div>
+</div>

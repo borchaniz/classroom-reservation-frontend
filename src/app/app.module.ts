@@ -14,6 +14,7 @@ import {LoginComponent} from './login/login.component';
 import {LayoutComponent} from './layout/layout.component';
 import {ListRoomsComponent} from './list-rooms/list-rooms.component';
 import {AddClassroomComponent} from './add-classroom/add-classroom.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {AddClassroomComponent} from './add-classroom/add-classroom.component';
     LayoutComponent,
     ListRoomsComponent,
     AddClassroomComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,

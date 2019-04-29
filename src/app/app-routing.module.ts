@@ -5,6 +5,7 @@ import {LoginComponent} from './login/login.component';
 import {LayoutComponent} from './layout/layout.component';
 import {ListRoomsComponent} from './list-rooms/list-rooms.component';
 import {AddClassroomComponent} from './add-classroom/add-classroom.component';
+import {SignupComponent} from './signup/signup.component';
 
 
 export const AppRoutes: Routes = [
@@ -27,6 +28,9 @@ export const AppRoutes: Routes = [
   }, {
     path: 'login',
     component: LoginComponent
+  }, {
+    path: 'signup',
+    component: SignupComponent
   }
 ];
 
