@@ -26,9 +26,14 @@ export class LoginComponent implements OnInit {
       // display its headers
       localStorage.setItem(Consts.TOKEN_STORAGE, resp.headers.get('Authorization'));
       this.userService.getAuthUser().subscribe(data => {
-        localStorage.setItem(Consts.USER_STORAGE, JSON.stringify(data));
-        this.router.navigateByUrl('/');
-      },error => {
+        if (data.status!=1){
+          swal('Erreur', 'Votre compte n\'est pas encore validé!', 'error');
+          localStorage.clear();
+        }else{
+          localStorage.setItem(Consts.USER_STORAGE, JSON.stringify(data));
+          this.router.navigateByUrl('/');
+        }
+        },error => {
         swal('Error', 'Please make sure you have entered the right credentials!', 'error');
         localStorage.clear();
       });

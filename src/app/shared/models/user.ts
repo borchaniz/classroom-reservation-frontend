@@ -16,7 +16,6 @@ export class User {
       && this.last_name !== ''
       && this.email !== ''
       && this.cin
-      && this.num_ins
       && this.phone
       && this.password.length >= 6
       && this.cPassword === this.password
