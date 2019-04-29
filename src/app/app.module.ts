@@ -12,10 +12,7 @@ import {FormsModule} from '@angular/forms';
 import {FileService} from './shared/services/file.service';
 import {LoginComponent} from './login/login.component';
 import {LayoutComponent} from './layout/layout.component';
-import {GererReservationsModule} from './gerer-reservations/gerer-reservations.module';
-import {ListRoomsComponent} from './list-rooms/list-rooms.component';
-import {AddClassroomComponent} from './add-classroom/add-classroom.component';
-import { SignupComponent } from './signup/signup.component';
+import {SignupComponent} from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +20,6 @@ import { SignupComponent } from './signup/signup.component';
     DashboardComponent,
     LoginComponent,
     LayoutComponent,
-    ListRoomsComponent,
-    AddClassroomComponent,
     SignupComponent
   ],
   imports: [
@@ -33,7 +28,6 @@ import { SignupComponent } from './signup/signup.component';
     HttpClientModule,
     SidebarModule,
     FormsModule,
-    GererReservationsModule
   ],
   providers: [UserService, FileService],
   bootstrap: [AppComponent]
