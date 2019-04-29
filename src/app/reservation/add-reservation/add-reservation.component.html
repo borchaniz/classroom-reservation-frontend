@@ -9,13 +9,13 @@
         <div class="form-group col-sm-6">
           <label>De</label>
           <input class="form-control" type="datetime-local" placeholder="Date & Heure de Début"
-                 [(ngModel)]="reservation.start_date" name="start">
+                 [(ngModel)]="reservation.start_date" name="start" (change)="onDatesChange()">
         </div>
 
         <div class="form-group col-sm-6">
           <label>À</label>
           <input class="form-control" type="datetime-local" placeholder="Date & Heure de Fin"
-                 [(ngModel)]="reservation.end_date" name="end">
+                 [(ngModel)]="reservation.end_date" name="end" (change)="onDatesChange()">
         </div>
 
         <div class="form-group">
@@ -33,7 +33,8 @@
                      bindLabel="number"
                      bindValue="id"
                      [(ngModel)]="reservation.salle_id"
-                     name="salle">
+                     name="salle"
+                     [disabled]="!reservation.start_date || !reservation.end_date">
           </ng-select>
         </div>
 

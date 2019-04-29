@@ -18,6 +18,10 @@ export class ListReservationComponent implements OnInit {
     this.reservationService.getAllByUser().subscribe(data=>{
       this.reservations = data;
       Utils.initDataTable("reservations-table");
+      this.reservations.forEach(item=>{
+        item.start_date = Utils.displayDate(new Date(item.start_date));
+        item.end_date = Utils.displayDate(new Date(item.end_date));
+      })
     });
   }
 

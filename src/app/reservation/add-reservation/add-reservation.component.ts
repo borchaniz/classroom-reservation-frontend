@@ -48,4 +48,8 @@ export class AddReservationComponent implements OnInit {
       swal('Error', 'Une erreur est survenue! Veuillez réessayer plus tard!', 'error');
     });
   }
+
+  onDatesChange() {
+    console.log('whaterver');
+  }
 }
