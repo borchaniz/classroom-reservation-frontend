@@ -12,8 +12,7 @@ import {FormsModule} from '@angular/forms';
 import {FileService} from './shared/services/file.service';
 import {LoginComponent} from './login/login.component';
 import {LayoutComponent} from './layout/layout.component';
-import {ListRoomsComponent} from './list-rooms/list-rooms.component';
-import {AddClassroomComponent} from './add-classroom/add-classroom.component';
+import {GererReservationsModule} from './gerer-reservations/gerer-reservations.module';
 
 @NgModule({
   declarations: [
@@ -21,15 +20,14 @@ import {AddClassroomComponent} from './add-classroom/add-classroom.component';
     DashboardComponent,
     LoginComponent,
     LayoutComponent,
-    ListRoomsComponent,
-    AddClassroomComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(AppRoutes),
     HttpClientModule,
     SidebarModule,
-    FormsModule
+    FormsModule,
+    GererReservationsModule
   ],
   providers: [UserService, FileService],
   bootstrap: [AppComponent]
