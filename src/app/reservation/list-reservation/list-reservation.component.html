@@ -1,3 +1,37 @@
-<p>
-  list-reservation works!
-</p>
+<div class="container-fluid">
+  <h2>Réservations</h2>
+  <div class="card" style="min-height: 120px">
+    <div class="header">
+      <h4>Toutes les Réservations</h4>
+    </div>
+    <div class="content" style="margin-top: 50px">
+      <table id="rooms-table" class="display table table-striped reservations-table" style="width:100%; text-align: left ">
+        <thead>
+        <tr>
+          <th>Salle N°</th>
+          <th>De</th>
+          <th>À</th>
+          <th>Organisme</th>
+          <th>Description</th>
+          <th>Besoins</th>
+          <th>Etat</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let reservation of reservations; let i=index">
+          <td>{{reservation.salle.number}}</td>
+          <td>{{reservation.start_date}}</td>
+          <td>{{reservation.end_date}}</td>
+          <td>{{reservation.organisme.label}}</td>
+          <td>{{reservation.description}}</td>
+          <td>{{reservation.other_needs}}</td>
+          <td *ngIf="reservation.status == 0" ><label style="color:white" class="label label-info">Non traitée</label> </td>
+          <td *ngIf="reservation.status == 1" ><label style="color:white" class="label label-success">Acceptée</label> </td>
+          <td *ngIf="reservation.status == 2" ><label style="color:white" class="label label-danger">Refusée</label> </td>
+          <td *ngIf="reservation.status == 3" ><label style="color:white" class="label label-warning">En cours...</label> </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
