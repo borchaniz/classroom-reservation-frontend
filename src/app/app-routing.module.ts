@@ -4,9 +4,12 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {LoginComponent} from './login/login.component';
 import {LayoutComponent} from './layout/layout.component';
 import {ListRoomsComponent} from './list-rooms/list-rooms.component';
-import {AddClassroomComponent} from './add-classroom/add-classroom.component';
+import {GererReservationsModule} from './gerer-reservations/gerer-reservations.module';
 import {SignupComponent} from './signup/signup.component';
 
+export function loadGererReservations() {
+  return GererReservationsModule;
+}
 
 export const AppRoutes: Routes = [
   {
@@ -18,11 +21,8 @@ export const AppRoutes: Routes = [
         component: DashboardComponent
       },
       {
-        path: 'add-classroom',
-        component: AddClassroomComponent
-      },{
-      path:'list-rooms',
-        component: ListRoomsComponent
+        path: 'reservations',
+        loadChildren: loadGererReservations
       }
     ]
   }, {

@@ -12,6 +12,7 @@ import {FormsModule} from '@angular/forms';
 import {FileService} from './shared/services/file.service';
 import {LoginComponent} from './login/login.component';
 import {LayoutComponent} from './layout/layout.component';
+import {GererReservationsModule} from './gerer-reservations/gerer-reservations.module';
 import {ListRoomsComponent} from './list-rooms/list-rooms.component';
 import {AddClassroomComponent} from './add-classroom/add-classroom.component';
 import { SignupComponent } from './signup/signup.component';
@@ -24,14 +25,15 @@ import { SignupComponent } from './signup/signup.component';
     LayoutComponent,
     ListRoomsComponent,
     AddClassroomComponent,
-    SignupComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(AppRoutes),
     HttpClientModule,
     SidebarModule,
-    FormsModule
+    FormsModule,
+    GererReservationsModule
   ],
   providers: [UserService, FileService],
   bootstrap: [AppComponent]

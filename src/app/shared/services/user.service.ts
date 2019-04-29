@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpResponse} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {GenericService} from './generic.service';
 import {User} from '../models/user';
@@ -8,10 +8,12 @@ import {Consts} from '../Consts';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService extends GenericService {
+export class UserService {
+
+  public url: string = Consts.BASE_URL;
+  headers: HttpHeaders = new HttpHeaders();
 
   constructor(private http: HttpClient) {
-    super();
   }
 
 
@@ -26,5 +28,15 @@ export class UserService extends GenericService {
   getAuthUser(): Observable<User> {
     const headers = this.headers.set('Authorization', localStorage.getItem(Consts.TOKEN_STORAGE));
     return <Observable<User>> this.http.get(this.url + 'user/authenticated', {headers: headers});
+  }
+
+  addToCart(bookId: number, quantity: number): Observable<any> {
+    const headers = this.headers.set('Authorization', localStorage.getItem(Consts.TOKEN_STORAGE));
+    return <Observable<any>> this.http.post(this.url + 'user/addToCart', {bookId: bookId, quantity: quantity}, {headers: headers});
+  }
+
+  clearCart(): Observable<User> {
+    const headers = this.headers.set('Authorization', localStorage.getItem(Consts.TOKEN_STORAGE));
+    return <Observable<User>> this.http.delete(this.url + 'user/clearCart', {headers: headers});
   }
 }
