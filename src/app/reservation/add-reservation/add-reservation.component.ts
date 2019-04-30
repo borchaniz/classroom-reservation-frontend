@@ -32,6 +32,9 @@ export class AddReservationComponent implements OnInit {
     });
     this.salleService.getAll().subscribe(data => {
       this.salles = data;
+      for(let s of this.salles){
+        s.display_label = s.number + ' ('+s.type.label+')';
+      }
       this.activeSalles = data;
     });
 

@@ -13,6 +13,7 @@ export class Salle {
 
   static PROJECTOR_AVAILIBLE = {has_projector: 1, label: 'Disponible'};
   static PROJECTOR_UNAVAILIBLE = {has_projector: 0, label: 'Non Disponible'};
+  display_label: string;
 
   static clone(toClone:Salle): Salle{
     let salle = new Salle();
