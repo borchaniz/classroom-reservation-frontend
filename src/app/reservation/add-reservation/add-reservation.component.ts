@@ -18,6 +18,7 @@ export class AddReservationComponent implements OnInit {
   reservation: Reservation = new Reservation();
   organisms: Organisme[] = [];
   salles: Salle[] = [];
+  activeSalles: Salle[] = [];
 
   constructor(private organismeService: OrganismeService,
               private salleService: SalleService,
@@ -31,6 +32,10 @@ export class AddReservationComponent implements OnInit {
     });
     this.salleService.getAll().subscribe(data => {
       this.salles = data;
+      for(let s of this.salles){
+        s.display_label = s.number + ' ('+s.type.label+')';
+      }
+      this.activeSalles = data;
     });
 
   }
@@ -50,6 +55,19 @@ export class AddReservationComponent implements OnInit {
   }
 
   onDatesChange() {
-    console.log('whaterver');
+    if (!this.reservation.start_date || !this.reservation.start_date) return;
+    this.activeSalles = this.salles.filter(item => this.available(item));
+  }
+
+  private available(salle: Salle) {
+    // console.log(new Date( this.reservation.start_date).getTime(),this.salles[0].reservations[0].start_date);
+    for (let item of salle.reservations) {
+      if (item.start_date >= new Date(this.reservation.start_date).getTime() && item.start_date <=new Date(this.reservation.end_date).getTime()
+        || item.end_date >= new Date(this.reservation.start_date).getTime() && item.end_date <= new Date(this.reservation.end_date).getTime()
+        || new Date(this.reservation.start_date).getTime() >= item.start_date && new Date(this.reservation.start_date).getTime() <= item.end_date
+        || new Date(this.reservation.end_date).getTime() >= item.start_date && new Date(this.reservation.end_date).getTime() <= item.end_date
+      ) return false;
+    }
+    return true;
   }
 }

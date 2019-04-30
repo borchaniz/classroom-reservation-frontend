@@ -1,4 +1,5 @@
 import {TypeSalle} from './type-salle';
+import {Reservation} from './reservation';
 
 export class Salle {
   id: number = 0;
@@ -8,9 +9,11 @@ export class Salle {
   type: TypeSalle = new TypeSalle();
   type_salle_id: number = 0;
   backup: Salle;
+  reservations:Reservation[] = [];
 
   static PROJECTOR_AVAILIBLE = {has_projector: 1, label: 'Disponible'};
   static PROJECTOR_UNAVAILIBLE = {has_projector: 0, label: 'Non Disponible'};
+  display_label: string;
 
   static clone(toClone:Salle): Salle{
     let salle = new Salle();
