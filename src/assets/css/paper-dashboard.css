@@ -241,7 +241,8 @@ strong {
   }
 }
 body {
-  color: #66615b;
+  background-image: url("../img/bg.png");
+  color: white;
   font-size: 14px;
   font-family: 'Muli', Arial, sans-serif;
 }
@@ -336,6 +337,7 @@ hr {
   background-position: center center;
 }
 .sidebar .sidebar-wrapper {
+  background-color: transparent;
   position: relative;
   max-height: none;
   min-height: 100%;
@@ -474,6 +476,7 @@ hr {
 .off-canvas-sidebar[data-background-color="white"]:after,
 .off-canvas-sidebar[data-background-color="white"]:before {
   background-color: #FFFFFF;
+  opacity: 0.6;
 }
 .sidebar .logo, .sidebar[data-background-color="white"] .logo,
 .off-canvas-sidebar .logo,
@@ -483,17 +486,17 @@ hr {
 .sidebar .logo p, .sidebar[data-background-color="white"] .logo p,
 .off-canvas-sidebar .logo p,
 .off-canvas-sidebar[data-background-color="white"] .logo p {
-  color: #66615B;
+  color: #000000;
 }
 .sidebar .logo .simple-text, .sidebar[data-background-color="white"] .logo .simple-text,
 .off-canvas-sidebar .logo .simple-text,
 .off-canvas-sidebar[data-background-color="white"] .logo .simple-text {
-  color: #66615B;
+  color: #000000;
 }
 .sidebar .nav li:not(.active) > a, .sidebar[data-background-color="white"] .nav li:not(.active) > a,
 .off-canvas-sidebar .nav li:not(.active) > a,
 .off-canvas-sidebar[data-background-color="white"] .nav li:not(.active) > a {
-  color: #66615B;
+  color: #000000;
 }
 .sidebar .nav .divider, .sidebar[data-background-color="white"] .nav .divider,
 .off-canvas-sidebar .nav .divider,
@@ -552,7 +555,7 @@ hr {
 }
 
 .main-panel {
-  background-color: #f4f3ef;
+  /*background-color: #f4f3ef;*/
   position: relative;
   z-index: 2;
   float: right;
@@ -1644,14 +1647,15 @@ textarea.form-control {
 }
 
 .navbar-default {
-  background-color: #f4f3ef;
+  background-color: #FFFFFF;
+  opacity: 0.8;
   border-bottom: 1px solid #DDDDDD;
 }
 .navbar-default .brand {
   color: #66615b !important;
 }
 .navbar-default .navbar-nav > li > a:not(.btn) {
-  color: #9A9A9A;
+  color: #383838;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:not(.btn):hover,
@@ -3108,7 +3112,6 @@ Copyright (c) 2015 Daniel Eden
     -ms-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
     transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
     left: 0;
-    background-color: white;
   }
 
   .navbar .container {
@@ -3162,6 +3165,7 @@ Copyright (c) 2015 Daniel Eden
     transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
   }
   .sidebar .sidebar-wrapper {
+    opacity: 0;
     position: relative;
     z-index: 3;
     overflow-y: scroll;
@@ -3174,7 +3178,7 @@ Copyright (c) 2015 Daniel Eden
   }
   .sidebar .nav > li > a {
     margin: 0px 0px;
-    color: #66615B;
+    color: #383838;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 12px;
