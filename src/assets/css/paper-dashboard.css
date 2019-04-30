@@ -241,7 +241,8 @@ strong {
   }
 }
 body {
-  background-image: url("../img/bg.png");
+  background-image: url("../img/image2.png");
+  background-size: 100%;
   color: white;
   font-size: 14px;
   font-family: 'Muli', Arial, sans-serif;
